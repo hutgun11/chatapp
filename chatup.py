@@ -19,8 +19,7 @@ def hello():
 
 def messageRecived():
   print( 'message was received!!!' )
-# เรียกใช้โดยกำหนดตัว routeมาที่ 'my event'
-@socketio.on( 'my event' ) 
+@socketio.on( 'my event' )
 def handle_my_custom_event( json ):
   print( 'recived my event: ' + str( json ) )
   socketio.emit( 'my response', json, callback=messageRecived )
